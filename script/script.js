@@ -55,4 +55,16 @@ function createAddPara()
 }
 clickMeButton.addEventListener("click", createAddPara)
 
+const buttonContainer = document.querySelector(".buttonContainer");
+buttonContainer.addEventListener("click",function changeBGGreen(event)
+{
+    console.log(event.target)
+    event.target.classList.add("change")
+
+})
+
+buttonContainer.addEventListener("click", function changepara(event)
+{
+    event.target.style.color = event.target.textContent
+})
 
