@@ -10,10 +10,11 @@ const clickMeButton = document.querySelector(".click-me");
 // }, {once : true});
 
 // //Event listener only used once with removeEventListener
-// clickMeButton.addEventListener("click", function clickMe()
+// clickMeButton.addEventListener("click", function clickMe(event)
 // {
+//     console.log(event)
 //     alert("You Clicked!") 
-//     clickMeButton.removeEventListener("click", clickMe);
+//     // clickMeButton.removeEventListener("click", clickMe);
 // })
 
 clickMeButton.addEventListener("click", function clickMe()
@@ -25,5 +26,33 @@ clickMeButton.addEventListener("click", function clickMe()
 clickMeButton.addEventListener("click", function changeText(){
     if (clickMeButton.textContent === "Click meh?"){
         clickMeButton.textContent = "CLICK ME!?"}
-    document.body.clickMeButton.classList.add("change")
+    clickMeButton.classList.add("change")
 })
+
+
+function createAddButton()
+{
+    const purple = document.createElement("button");
+    purple.textContent = "Purple";
+    purple.addEventListener("mouseover", function changeBGGreen(event){
+        console.log(event.target);
+        event.target.classList.add("change")
+    })
+    document.body.appendChild(purple)
+}
+clickMeButton.addEventListener("click", createAddButton)
+
+function createAddPara()
+{
+    const parag = document.createElement("p");
+    parag.textContent = "my para";
+    parag.addEventListener("mouseover", function changeBGGreen(event){
+        console.log(event.target);
+        event.target.classList.add("change")
+    })
+    document.body.appendChild(parag)
+    
+}
+clickMeButton.addEventListener("click", createAddPara)
+
+
